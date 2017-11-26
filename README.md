@@ -9,39 +9,46 @@ The expected output is the Postgres database that consists of:
 * tables for boxing records for each of the world heavyweight boxing champion
 
 ## Milestones
-### Part1: Setup the caching system
+### Part 1: Setup the caching system
 file: caching_system.py
 - [ ] Try-except for opening the cache file
 - [ ] Function to store new data in the cache file
 - [ ] Function to get data from the cache file
 
-### Part2: Boxer class
+### Part 2: Boxer class
 file: BoxerClass.py
 - [ ] __init__ : setup all attributes
 - [ ] __repr__
 - [ ] __contains__
 
-### Part3: Retrieve the data
-file: SI507F17_finalproject.py 
+### Part 3: Retrieve the data
+file: SI507F17_finalproject.py  
 url: https://en.wikipedia.org/wiki/List_of_heavyweight_boxing_champions
 - [ ] Function to get HTML, and parse it to BeautifulSoup object
 - [ ] Get the list of world heavyweight boxing champions from the internet
 - [ ] Create Boxer object for each boxer from his wiki page
 
-### Part4: Storing data into Postgres database
+### Part 4: Storing data into Postgres database
 files: database.py, config.py
 - [ ] Create a database table for a list of world heavyweight boxing champions
 - [ ] Create a database table for a timeline of world heavyweight boxing champions
 - [ ] For each boxer, create a table that store the boxing records
 
-### Part5: Visualizations
+### Part 5: Visualizations
 file: SI507F17_finalproject.py
 - [ ] Graph: Orthodox vs Southpaw (which stance is better for Heavyweight class)
 - [ ] Graph: Stats for height, reach, and weight
 - [ ] Graph: Nationalities
 
+### Part 6: Test suite
+file: SI507F17_finalproject_test.py
+- [ ] Test Boxer Class
+- [ ] Test database table for a list of world heavyweight boxing champions
+- [ ] Test database table for a timeline of world heavyweight boxing champions
+- [ ] Test database table for a list of countries
+- [ ] Test database tables for boxing records
 
-### Part6: Miscellaneous
+### Part 7: Miscellaneous
 file: SI507F17_finalproject.py
 - [ ] Create a virtual environment
 - [ ] requirements.txt
