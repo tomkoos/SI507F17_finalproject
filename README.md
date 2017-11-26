@@ -11,34 +11,34 @@ The expected output is the Postgres database that consists of:
 ## Milestones
 ### Part1: Setup the caching system
 file: caching_system.py
-[] Try-except for opening the cache file
-[] Function to store new data in the cache file
-[] Function to get data from the cache file
+- [ ] Try-except for opening the cache file
+- [ ] Function to store new data in the cache file
+- [ ] Function to get data from the cache file
 
 ### Part2: Boxer class
 file: BoxerClass.py
-[] __init__ : setup all attributes
-[] __repr__
-[] __contains__
+- [ ] __init__ : setup all attributes
+- [ ] __repr__
+- [ ] __contains__
 
 ### Part3: Retrieve the data
 file: SI507F17_finalproject.py
 url: https://en.wikipedia.org/wiki/List_of_heavyweight_boxing_champions
-[] Function to get HTML, and parse it to BeautifulSoup object
-[] Get the list of world heavyweight boxing champions from the internet
-[] Create Boxer object for each boxer from his wiki page
+- [ ] Function to get HTML, and parse it to BeautifulSoup object
+- [ ] Get the list of world heavyweight boxing champions from the internet
+- [ ] Create Boxer object for each boxer from his wiki page
 
 ### Part4: Storing data into Postgres database
 files: database.py, config.py
-[] Create a database table for a list of world heavyweight boxing champions
-[] Create a database table for a timeline of world heavyweight boxing champions
-[] For each boxer, create a table that store the boxing records
+- [ ] Create a database table for a list of world heavyweight boxing champions
+- [ ] Create a database table for a timeline of world heavyweight boxing champions
+- [ ] For each boxer, create a table that store the boxing records
 
 ### Part5: Visualizations
 file: SI507F17_finalproject.py
-[] Graph: Orthodox vs Southpaw (which stance is better for Heavyweight class)
-[] Graph: Stats for height, reach, and weight
-[] Graph: Nationalities
+- [ ] Graph: Orthodox vs Southpaw (which stance is better for Heavyweight class)
+- [ ] Graph: Stats for height, reach, and weight
+- [ ] Graph: Nationalities
 
 
 ### Part6: Miscellaneous
