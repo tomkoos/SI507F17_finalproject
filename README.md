@@ -9,17 +9,18 @@ The expected output is the Postgres database that consists of:
 * tables for boxing records for each of the world heavyweight boxing champion
 
 ## Milestones
-### Part 1: Setup the caching system
+### Part 1: VNV setup and caching system
 file: caching_system.py
+- [ ] Create a virtual environment and install all the required packages
 - [ ] Try-except for opening the cache file
 - [ ] Function to store new data in the cache file
 - [ ] Function to get data from the cache file
 
 ### Part 2: Boxer class
 file: BoxerClass.py
-- [ ] __init__ : setup all attributes
-- [ ] __repr__
-- [ ] __contains__
+- [ ] \_\_init\_\_ : setup all attributes
+- [ ] \_\_repr\_\_
+- [ ] \_\_contains\_\_
 
 ### Part 3: Retrieve the data
 file: SI507F17_finalproject.py  
@@ -36,6 +37,7 @@ files: database.py, config.py
 
 ### Part 5: Visualizations
 file: SI507F17_finalproject.py
+- [ ] Interactive interface to produce visualizations
 - [ ] Graph: Orthodox vs Southpaw (which stance is better for Heavyweight class)
 - [ ] Graph: Stats for height, reach, and weight
 - [ ] Graph: Nationalities
@@ -49,5 +51,5 @@ file: SI507F17_finalproject_test.py
 - [ ] Test database tables for boxing records
 
 ### Part 7: Miscellaneous
-- [ ] Create a virtual environment
 - [ ] requirements.txt
+- [ ] Check the example outputs
