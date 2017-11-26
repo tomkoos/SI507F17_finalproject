@@ -22,7 +22,7 @@ file: BoxerClass.py
 - [ ] __contains__
 
 ### Part3: Retrieve the data
-file: SI507F17_finalproject.py
+file: SI507F17_finalproject.py 
 url: https://en.wikipedia.org/wiki/List_of_heavyweight_boxing_champions
 - [ ] Function to get HTML, and parse it to BeautifulSoup object
 - [ ] Get the list of world heavyweight boxing champions from the internet
@@ -43,5 +43,5 @@ file: SI507F17_finalproject.py
 
 ### Part6: Miscellaneous
 file: SI507F17_finalproject.py
-[] Create a virtual environment
-[] requirements.txt
+- [ ] Create a virtual environment
+- [ ] requirements.txt
