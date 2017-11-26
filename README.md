@@ -49,6 +49,5 @@ file: SI507F17_finalproject_test.py
 - [ ] Test database tables for boxing records
 
 ### Part 7: Miscellaneous
-file: SI507F17_finalproject.py
 - [ ] Create a virtual environment
 - [ ] requirements.txt
