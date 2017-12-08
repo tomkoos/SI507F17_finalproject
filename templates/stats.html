@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Statistics</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    </head>
+
+    <body>        
+        <div class="logo" align="center">
+            <img src='/static/muhammad_ali.jpg'></img>
+        </div>
+
+        <div class="sidenav" align="center">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('stats') }}">Statistics</a>
+            <a href="{{ url_for('map') }}">Map</a>
+            <a href="{{ url_for('topfives') }}">Top 5</a>
+        </div>
+
+        <div class="search">
+            <form action="/search" method="get" style="width: 170px">
+                <label>
+                    <b>Search boxer</b>
+                    <input type="text" name="q">
+                </label>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="sidenav2" align="center">
+            <center><b><font color="#ffffff">Database Tables</font></b></center>
+            <hr noshade>
+            <a href="{{ url_for('list') }}">Table: ChampionList</a>
+            <a href="{{ url_for('country') }}">Table: Countries</a>
+        </div> 
+
+        <div class="content">
+            <h2>World Heavyweight Boxing Champions Database</h2>
+            <center>            
+            {{ plot_stance | safe }}
+            <u>Note</u>: Since 88–92% of the world population is right-handed, it is inconclusive that Orthodox stance is better than Southpaw stance.
+
+            {{ plot_height | safe }}
+            {{ plot_reach | safe }}
+            <u>Note</u>: Arm span or reach (sometimes referred to as wingspan) is the physical measurement of the length<br> from one end of an individual's arms (measured at the fingertips) to the other when raised <br>parallel to the ground at shoulder height at a 90° angle. The average reach correlates to the person's height.
+        </div>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>World Heavyweight Boxing Champions Database</title>
+        <link rel="stylesheet" href="/static/style.css">
+
+    </head>
+
+    <body>
+        <div class="logo" align="center">
+            <img src='/static/muhammad_ali.jpg'></img>
+        </div>
+
+        <div class="sidenav" align="center">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('stats') }}">Statistics</a>
+            <a href="{{ url_for('map') }}">Map</a>
+            <a href="{{ url_for('topfives') }}">Top 5</a>
+        </div>
+
+        <div class="search">
+            <form action="/search" method="get" style="width: 170px">
+                <label>
+                    <b>Search boxer</b>
+                    <input type="text" name="q">
+                </label>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="sidenav2" align="center">
+            <center><b><font color="#ffffff">Database Tables</font></b></center>
+            <hr noshade>
+            <a href="{{ url_for('list') }}">Table: ChampionList</a>
+            <a href="{{ url_for('country') }}">Table: Countries</a>
+        </div>
+
+        <div class="content">
+            <h2>World Heavyweight Boxing Champions Database</h2>
+            <center>
+            <h3>Longest Reign</h3>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Reign Days</th>
+                </tr>
+                {% for row in longestReign %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.reign_days }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h3>Most Fights</h3>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Total fights</th>
+                </tr>
+                {% for row in mostFight %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.total_fights }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h3>KO percentage</h3>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>KO %</th>
+                </tr>
+                {% for row in KOpercent %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.ko_percent }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>World Heavyweight Boxing Champions Database</title>
+        <link rel="stylesheet" href="/static/style.css">
+
+    </head>
+
+    <body>
+        <div class="logo" align="center">
+            <img src='/static/muhammad_ali.jpg'></img>
+        </div>
+
+        <div class="sidenav" align="center">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('stats') }}">Statistics</a>
+            <a href="{{ url_for('map') }}">Map</a>
+            <a href="{{ url_for('topfives') }}">Top 5</a>
+        </div>
+
+        <div class="search">
+            <form action="/search" method="get" style="width: 170px">
+                <label>
+                    <b>Search boxer</b>
+                    <input type="text" name="q">
+                </label>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="sidenav2" align="center">
+            <center><b><font color="#ffffff">Database Tables</font></b></center>
+            <hr noshade>
+            <a href="{{ url_for('list') }}">Table: ChampionList</a>
+            <a href="{{ url_for('country') }}">Table: Countries</a>
+        </div>
+        
+
+        <div class="content">
+            <h2>World Heavyweight Boxing Champions Database</h2>
+            <h3>All Champions (click on names to access their boxing record)</h3>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Nickname</th>
+                    <th>Recognitions</th>
+                    <th>Total fights</th>
+                    <th>Wins</th>
+                    <th>Wins by KO</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                    <th>No contests</th>
+                </tr>
+                {% for row in rows %}
+                <tr>
+                    <td><a href="{{ url_for('records', name=row.name) }}">{{ row.name }}</a></td>
+                    <td>{{ row.nickname }}</td>
+                    <td>{{ row.recognitions }}</td>
+                    <td>{{ row.total_fights }}</td>
+                    <td>{{ row.wins }}</td>
+                    <td>{{ row.wins_by_ko }}</td>
+                    <td>{{ row.losses }}</td>
+                    <td>{{ row.draws }}</td>
+                    <td>{{ row.no_contests }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

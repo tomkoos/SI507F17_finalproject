@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Table: Boxing Records</title>
+        <link rel="stylesheet" href="/static/style.css">
+
+    </head>
+
+    <body>
+        <div class="logo" align="center">
+            <img src='/static/muhammad_ali.jpg'></img>
+        </div>
+
+        <div class="sidenav" align="center">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('stats') }}">Statistics</a>
+            <a href="{{ url_for('map') }}">Map</a>
+            <a href="{{ url_for('topfives') }}">Top 5</a>
+        </div>
+
+        <div class="search">
+            <form action="/search" method="get" style="width: 170px">
+                <label>
+                    <b>Search boxer</b>
+                    <input type="text" name="q">
+                </label>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="sidenav2" align="center">
+            <center><b><font color="#ffffff">Database Tables</font></b></center>
+            <hr noshade>
+            <a href="{{ url_for('list') }}">Table: ChampionList</a>
+            <a href="{{ url_for('country') }}">Table: Countries</a>
+        </div>
+
+        <div class="content">
+            <h2>World Heavyweight Boxing Champions Database</h2>
+            <h3>Boxing records: {{ table_name }}</h3>
+            {% if no_data %}
+            <h3>No record. Sorry for the inconvenience.</h3>
+            {% endif %}
+            <table>
+                <tr>
+                    {% for header in rows[0] %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in rows %}
+                <tr>
+                    {% for header in rows[0] %}
+                    <td>{{ row[header] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

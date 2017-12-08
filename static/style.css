@@ -1,0 +1,112 @@
+body {
+    font-family: Calibri;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.content {
+    margin-left: 200px;
+    font-size: 14px; 
+    padding: 0px 10px;
+}
+
+img {
+    max-width: 100%;
+}
+form input {
+    width: 100%;
+    height: 28px;
+    font-size: inherit;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th, td {
+    text-align: center;
+}
+
+h2 {
+    color: #163470;
+}
+
+hr { 
+    display: block;
+    border-width: 2px;
+    border-color: #FFFFFF;
+} 
+
+.logo {
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 10px;
+    left: 20px;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav {
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 210px;
+    left: 20px;
+    background: #132042;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 0;
+    text-decoration: none;
+    font-size: 16px;
+    color: #afcaff;
+    display: block;
+    font-weight: bold;
+}
+
+.sidenav a:hover {
+    color: #ffffff;
+}
+
+.search {
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 370px;
+    left: 20px;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav2 {
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 500px;
+    left: 20px;
+    background: #132042;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav2 a {
+    padding: 6px 8px 6px 0;
+    text-decoration: none;
+    font-size: 13px;
+    color: #afcaff;
+    display: block;
+    font-weight: bold;
+}
+
+.sidenav2 a:hover {
+    color: #ffffff;
+}
+
