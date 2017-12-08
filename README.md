@@ -17,6 +17,6 @@ db_user = 'myusername'
 db_password = 'mypassword'
 retrieve_from_cache = True
 ```
-3.  Run ```python main.py``` to get all the data and to create database tables (it will take few minutes)
+3.  Run ```python SI507F17_finalproject.py``` to get all the data and to create database tables (it will take few minutes)
 4.  Run ```python app.py``` to start an internal web server
 5.  Go to __localhost:5000__ on web browser to access the Home page
