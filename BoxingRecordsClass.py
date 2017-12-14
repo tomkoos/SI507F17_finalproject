@@ -5,11 +5,11 @@ class BoxingRecords:
     self.records = []
     self.headers = []
 
-  def add_record(self, record):
-    self.records.append(record)
-
   def set_headers(self, headers):
     self.headers = headers
+
+  def add_record(self, record):
+    self.records.append(record)
 
   def no_record(self):
     self.have_record = False

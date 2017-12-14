@@ -32,7 +32,8 @@ class Boxer:
     self.reach = params.get('reach', None)
     if self.reach:
       self.reach = int(re.search('([0-9.]+) cm', self.reach).group(1))
-    self.country_id = params['country']['id']
+    country_dict = params.get('country', {})
+    self.country_id = country_dict.get('id', None)
     self.born = params.get('born', None)
     self.died = params.get('died', None)
     self.stance = params.get('stance', None)
@@ -40,12 +41,16 @@ class Boxer:
       self.stance = re.sub('[0-9\\[\\]]+', '', self.stance)
 
     # records
-    self.total_fights = re.search('([0-9]+)', params.get('total_fights', None)).group(1)
-    self.wins = params.get('wins', None)
-    self.wins_by_ko = params.get('wins_by_ko', 0)
-    self.losses = params.get('losses', 0)
-    self.draws = params.get('draws', 0)
-    self.no_contests = params.get('no_contests', 0)
+    if params.get('total_fights', None):
+      self.total_fights = int(re.search('([0-9]+)', params['total_fights']).group(1))
+    else:
+      self.total_fights = 0
+    
+    self.wins = int(params.get('wins', 0))
+    self.wins_by_ko = int(params.get('wins_by_ko', 0))
+    self.losses = int(params.get('losses', 0))
+    self.draws = int(params.get('draws', 0))
+    self.no_contests = int(params.get('no_contests', 0))
 
     self.recognitions = ''
     self.reign_days = 0
@@ -55,9 +60,6 @@ class Boxer:
 
   def set_reign_days(self, reign_days):
     self.reign_days = reign_days
-
-  def get_name(self):
-    return self.name
 
   def __repr__(self):
     return self.name

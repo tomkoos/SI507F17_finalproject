@@ -174,7 +174,11 @@ def get_all_info():
       temp_record = {}
       values = row.find_all('td')
       for i in range(len(values)):
-        temp_record[list_headers[i]] = values[i].text
+        temp_val = values[i]
+        if temp_val.span:
+          temp_val.span.extract()
+          print(temp_val.text)
+        temp_record[list_headers[i]] = temp_val.text
       boxing_record.add_record(temp_record)
     list_boxing_records.append(boxing_record)
 
@@ -182,8 +186,8 @@ def get_all_info():
   for k in title_recognition:
     title_recognition[k] = ', '.join(set(title_recognition[k]))
   for boxer in list_boxers:
-    boxer.set_recognitions(title_recognition[boxer.get_name()])
-    boxer.set_reign_days(reign_days[boxer.get_name()])
+    boxer.set_recognitions(title_recognition[boxer.name])
+    boxer.set_reign_days(reign_days[boxer.name])
 
   create_cache_name_to_id(name_to_id)
 
