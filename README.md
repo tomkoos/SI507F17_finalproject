@@ -8,7 +8,7 @@ The expected output is the Postgres database that consists of:
 * 83 tables for boxing records for each of the world heavyweight boxing champion (However, some of them will be blank because of lack of data)
 
 
-## How to run
+## How to run the visualization
 The project expect Python 3 to run. Make sure Python 3 is installed in the system.  
 0. Open Terminal (OSX or Unix) or Command Prompt (Windows). Change directory to the directory of the project.
 1. Install all the required packages by running ```pip install -r requirements.txt```
