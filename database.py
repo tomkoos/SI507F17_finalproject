@@ -47,7 +47,8 @@ def setup_database():
                               Wins_by_KO INT, \
                               Losses INT, \
                               Draws INT, \
-                              No_contests INT)")
+                              No_contests INT, \
+                              Pic_URL VARCHAR(256))")
 
   cur.execute("CREATE TABLE IF NOT EXISTS \
                  Country(Country_ID INT PRIMARY KEY, \
@@ -97,7 +98,8 @@ def create_table_list_of_champs(list_boxers):
             'wins_by_ko': boxer.wins_by_ko,
             'losses': boxer.losses,
             'draws': boxer.draws,
-            'no_contests': boxer.no_contests}
+            'no_contests': boxer.no_contests,
+            'pic_url': boxer.pic_url}
           )
   conn.commit()
   print('Success inserting data into ChampionList table')

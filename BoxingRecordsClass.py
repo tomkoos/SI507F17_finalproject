@@ -11,9 +11,9 @@ class BoxingRecords:
   def set_headers(self, headers):
     self.headers = headers
 
-
   def no_record(self):
     self.have_record = False
 
   def __repr__(self):
     return "Boxing records for boxer ID: {}".format(self.boxer_id)
+

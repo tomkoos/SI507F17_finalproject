@@ -96,8 +96,7 @@ def get_all_info():
     else:
       uniquenames.add(name)
     profile = getSoup(base_url + suffix)
-
-    profile_data_dict['pic_url'] = profile.find('img')['src']
+    
     profile_data_dict['name'] = name    
     if not (country in countries):
       countries[country] = {'id': country_index, 'country_code': three_letters_country_codes[country]}
@@ -105,14 +104,18 @@ def get_all_info():
     profile_data_dict['country'] = countries[country]
 
     # get profile info for each boxer
-    profile_card = profile.find('table', {'class': 'infobox vcard'})
+    profile_card = profile.find('table', {'class': 'infobox vcard'})    
     # wiki page for Vitali Klitschko is a little bit different
     if row_data[0].text == 'Vitali Klitschko':
       profile_card = profile.find_all('table', {'class': 'infobox vcard'})[1]
     if not profile_card:
       profile_card = profile.find('table', {'class': 'infobox biography vcard'})
-    profile_data = profile_card.find_all('tr')    
-    for item in profile_data:
+    profile_data = profile_card.find_all('tr')
+    if profile_card.find('img'):
+      profile_data_dict['pic_url'] = profile_card.find('img')['src']
+    else:
+      profile_data_dict['pic_url'] = None
+    for item in profile_data:      
       th = item.find('th')
       td = item.find('td')
       if th:

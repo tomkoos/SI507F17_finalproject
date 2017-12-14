@@ -96,11 +96,13 @@ def records(name):
         cache_json = cache_file.read()
         name_to_id = json.loads(cache_json)
   boxer_id = name_to_id[name]
+  cursor.execute("SELECT pic_url FROM ChampionList WHERE boxer_id = {}".format(boxer_id))
+  pic_url = cursor.fetchone()['pic_url']
   cursor.execute("SELECT * FROM boxer{}".format(boxer_id))
   rows = cursor.fetchall()
   if not rows:
     no_data = True
-  return render_template('records.html', table_name=name, rows=rows, no_data=no_data)
+  return render_template('records.html', table_name=name, rows=rows, no_data=no_data, pic_url=pic_url)
 
 @app.route('/search')
 def search():

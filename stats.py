@@ -15,7 +15,7 @@ def plot_stance(stances):
     ]
 
     layout = go.Layout(
-        title = "<b>Dominated by Orthodox stance!</b>",
+        title = "<b>Dominated by Orthodox stance</b>",
         autosize=False,
         width=500,
         height=500,

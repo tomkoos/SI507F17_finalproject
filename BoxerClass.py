@@ -61,3 +61,6 @@ class Boxer:
 
   def __repr__(self):
     return self.name
+
+  def __contains__(self, string):
+    return (string in self.name) or (string in self.real_name) or (string in self.nickname)
